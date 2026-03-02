@@ -14,16 +14,16 @@ Connect Claude to your [Context Link](https://context-link.ai) knowledge base an
 
 | Skill | Triggers when you... |
 |-------|---------------------|
-| `get-context` | Reference internal knowledge, say "get context" or "use context link" |
-| `save-memory` | Say "save this", "remember this", or ask to store information |
-| `update-memory` | Say "update memory", "add to {topic}", or want to modify saved content |
+| `get-context` | Semantic search which returns the most relevant content for any topic, no exact matches required. Just ask for 'context' on whatever you need. |
+| `save-memory` | Say "save to Context Link under /topic_123", "save this chat to Context Link", or ask to store information |
+| `update-memory` | Say "update this memory in Context Link under /topic_456" |
 
 ### Commands (manual)
 
 | Command | Usage |
 |---------|-------|
 | `/get-context [topic]` | Retrieve knowledge about a specific topic |
-| `/save-memory [slug]` | Save current conversation under a name |
+| `/save-memory [slug]` | Save something under a specific name, or a summary of the chat to an auto generated name (chat-session-{YYYY-MM-DD-HHMM}) |
 | `/update-memory [slug]` | Update existing saved content with new info |
 
 ## Setup
