@@ -13,11 +13,13 @@ Save content from the current conversation to Context Link. One request, no fuss
 
 **Workflow:**
 
-1. **Pick the slug.** If the user said "save {name}", use that name as the slug (lowercased, dashed). If the user said "save this conversation", "save this chat", or similar without a specific topic name, use `chat-session-{YYYY-MM-DD-HHMM}` as the slug. Otherwise, infer a short descriptive slug from the topic. Only ask if truly ambiguous.
+1. **Print this message:** `🔗 Saving memory to Context Link → {SLUG}` — Never print the actual Context Link URL, as it contains a private 'pin' or 'p' URL param.
 
-2. **Summarize the content.** Distill the conversation into a concise, reusable reference document in markdown. Focus on what's useful to retrieve later — strip conversational back-and-forth, keep decisions, specs, and key details.
+2. **Pick the slug.** If the user said "save {name}", use that name as the slug (lowercased, dashed). If the user said "save this conversation", "save this chat", or similar without a specific topic name, use `chat-session-{YYYY-MM-DD-HHMM}` as the slug. Otherwise, infer a short descriptive slug from the topic. Only ask if truly ambiguous.
 
-3. **POST it.** Take the URL below and replace the path placeholder (`TOPIC_HERE` or `{SLUG}` — whichever is present) with the chosen slug (lowercase, use-dashes-for-spaces).
+3. **Summarize the content.** Distill the conversation into a concise, reusable reference document in markdown. Focus on what's useful to retrieve later — strip conversational back-and-forth, keep decisions, specs, and key details.
+
+4. **POST it.** Take the URL below and replace the path placeholder (`TOPIC_HERE` or `{SLUG}` — whichever is present) with the chosen slug (lowercase, use-dashes-for-spaces).
 
 ```bash
 curl -s -X POST "~~context link url~~" \
