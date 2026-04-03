@@ -4,7 +4,7 @@ description: >
   Retrieve internal knowledge via Context Link when the user references company knowledge
   or says "get context", "use context link", "check context link", or asks about internal
   information that may be stored in their knowledge base.
-version: 0.1.0
+version: 0.2.0
 ---
 
 ## Get Context from Context Link
@@ -24,6 +24,8 @@ Retrieve content from the user's Context Link knowledge base.
 ```bash
 curl -s "~~context link url~~"
 ```
+
+   - Optionally append `&mode=MODE_NAME` (or `?mode=MODE_NAME` if no pin is set) to weight results toward a specific mode (e.g. `customer-support`). Modes are configured by the user on their Connections page.
 
 4. **Handle the response.**
    - The response is HTML. Extract the text content from inside the `<body>` tag — ignore HTML boilerplate.
