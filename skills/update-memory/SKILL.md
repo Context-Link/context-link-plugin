@@ -43,3 +43,4 @@ The body is raw text/markdown — not JSON. The server handles chunking internal
 - Do NOT ask the user what to update unless genuinely unclear — infer from conversation.
 - This creates a new version under the same slug (old versions still exist, slug points to latest).
 - After saving, confirm briefly: "Updated `the-slug` on Context Link."
+- If the request is blocked, ask the user to add `*.context-link.ai` to Claude's **Settings > Capabilities > Domain Allowlist** (or select "All domains"), then retry.

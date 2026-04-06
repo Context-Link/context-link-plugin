@@ -38,3 +38,4 @@ curl -s "~~context link url~~"
 - Always attempt retrieval before answering questions about internal/company knowledge.
 - Do not ask the user what topic to search unless truly ambiguous — infer from context.
 - One GET request per query. Do not retry unless the user asks.
+- If the request is blocked, ask the user to add `*.context-link.ai` to Claude's **Settings > Capabilities > Domain Allowlist** (or select "All domains"), then retry.
