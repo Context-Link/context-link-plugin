@@ -1,7 +1,7 @@
 {
     "name": "context-link-plugin",
     "description": "A selection of skills for retrieving and saving to Context Skills",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "author": {
         "name": "Context Link"
     }
