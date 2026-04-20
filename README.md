@@ -5,6 +5,7 @@ Connect Claude to your [Context Link](https://context-link.ai) knowledge base an
 ## What it does
 
 - **Get Context** — Pull relevant knowledge from your Context Link when you reference internal topics
+- **Ask Question** — Get a concise, cited answer grounded in your Context Link (Pro plan)
 - **Save Memory** — Save conversation content to Context Link for later retrieval
 - **Update Memory** — Retrieve existing saved content, merge in new information, and save it back
 
@@ -15,6 +16,7 @@ Connect Claude to your [Context Link](https://context-link.ai) knowledge base an
 | Skill | Triggers when you... |
 |-------|---------------------|
 | `get-context` | Semantic search which returns the most relevant content for any topic, no exact matches required. Just ask for 'context' on whatever you need. |
+| `ask-question` | Say "ask my context", "ask Context Link what…", or ask a direct question to be answered from your knowledge base with citations (Pro plan) |
 | `save-memory` | Say "save to Context Link under /topic_123", "save this chat to Context Link", or ask to store information |
 | `update-memory` | Say "update this memory in Context Link under /topic_456" |
 
@@ -23,6 +25,7 @@ Connect Claude to your [Context Link](https://context-link.ai) knowledge base an
 | Command | Usage |
 |---------|-------|
 | `/get-context [topic]` | Retrieve knowledge about a specific topic |
+| `/ask-question [question]` | Get a short, cited answer grounded in your Context Link (Pro plan) |
 | `/save-memory [slug]` | Save something under a specific name, or a summary of the chat to an auto generated name (chat-session-{YYYY-MM-DD-HHMM}) |
 | `/update-memory [slug]` | Update existing saved content with new info |
 
@@ -40,4 +43,5 @@ After installing the plugin, you'll need to customize it with your personal Cont
 Context Link is a knowledge base that indexes your content (websites, Google Drive, Notion) into searchable embeddings. This plugin lets Claude query that knowledge and save new content back, using Context Link's REST API.
 
 - **GET** `{your-url}/{topic}` — retrieves content matching the topic
+- **GET** `{your-url}/q/{question}` — returns a grounded, cited answer to the question
 - **POST** `{your-url}/{slug}` — saves markdown content under a named slug
